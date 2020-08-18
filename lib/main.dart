@@ -1,3 +1,5 @@
+//import 'dart:html';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -45,10 +47,18 @@ class _Home extends State<Home> {
         // la distance du titre
         elevation: 50.0, //l'ambre au dessous de la App Bar
       ),
-      body: Text('Bonjour',
-      style: new TextStyle(color: couleur ? Colors.red : Colors.green),),
-      floatingActionButton: new FloatingActionButton(onPressed: changerCouleur),
-    );
+      body: Column(
+        children: <Widget>[
+          new Text('Salut',
+          style: TextStyle(fontSize:25,color: couleur ? Colors.red : Colors.green),),
+          new RaisedButton(onPressed: changerCouleur,
+          child: Text('Cliquez ICI'),// texte que sera dans le boutton
+            textColor: Colors.white,
+            color:Colors.blueGrey,
+          )
+        ],
+      )
+        );
   }
 
   void changerCouleur() {
