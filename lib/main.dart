@@ -42,18 +42,20 @@ class _Home extends State<Home> {
         elevation: 50.0,            //l'ambre au dessous de la App Bar
       ),
       body: Center(
-        child :Container(
-        decoration: BoxDecoration(color: Colors.amber,border: Border.all(width: 10),borderRadius: BorderRadius.circular(25)),
-        height: MediaQuery.of(context).size.height/1.5, // selon la taille de l'écran
-        width: MediaQuery.of(context).size.width/0.75,
-        margin: EdgeInsets.all(10), // à tous les cotés ou EdgeInsets.only(...)
-        child: new Image.asset(  //on peut pas la redimensionner, on doit redimensionner le Container
-            'images/book1.png',
-          fit: BoxFit.cover,
-        )
-        ),
-      ),
-      );
-
+           child: new Column(
+             mainAxisAlignment: MainAxisAlignment.end, // ou ils vont se placer
+            // crossAxisAlignment: CrossAxisAlignment.center,
+             children: <Widget>[
+                new Text('HOLAAAA'),
+                new Image.asset('images/book1.png'),
+                new Container(
+                  height: 20,
+                  width: 20,
+                  color: Colors.indigo,
+    )
+    ],
+       ),
+    ),
+    );
   }
 }
