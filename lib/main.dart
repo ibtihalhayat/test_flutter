@@ -25,38 +25,35 @@ class Home extends StatefulWidget {
     return new _Home() ;
   }
 }
-
+bool couleur=false;
 class _Home extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    double largeur=MediaQuery.of(context).size.width; //pour ne pas dépasser la largeur de la fenetre par ROW
     return new Scaffold(
       backgroundColor: Colors.white60,
       appBar: new AppBar(
         title: new Text('Mon Application'),
-        leading: new Icon(Icons.arrow_back_ios), // ce qui sera avant le titre à gauche
-        actions: <Widget>[                            // ce qui sera après le titre
-          new Icon(Icons.account_circle)   // Icon ou IconButton(icon:Icon(Icons. ...)
+        leading: new Icon(Icons.arrow_back_ios),
+        // ce qui sera avant le titre à gauche
+        actions: <Widget>[
+          // ce qui sera après le titre
+          new Icon(Icons.account_circle)
+          // Icon ou IconButton(icon:Icon(Icons. ...)
         ],
         centerTitle: true,
-        titleSpacing: 50, // la distance du titre
-        elevation: 50.0,            //l'ambre au dessous de la App Bar
+        titleSpacing: 50,
+        // la distance du titre
+        elevation: 50.0, //l'ambre au dessous de la App Bar
       ),
-      body: Center(
-           child: new Row (
-             mainAxisAlignment: MainAxisAlignment.end, // ou ils vont se placer
-            // crossAxisAlignment: CrossAxisAlignment.center,
-             children: <Widget>[
-                new Text('HOLAAAA'),
-                new Image.asset('images/book1.png'),
-                new Container(
-                  height: 20,
-                  width: largeur / 4,
-                  color: Colors.indigo,
-    )
-    ],
-       ),
-    ),
+      body: Text('Bonjour',
+      style: new TextStyle(color: couleur ? Colors.red : Colors.green),),
+      floatingActionButton: new FloatingActionButton(onPressed: changerCouleur),
     );
+  }
+
+  void changerCouleur() {
+    setState(() {
+      couleur = !couleur;
+    });
   }
 }
