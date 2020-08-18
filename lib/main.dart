@@ -29,6 +29,7 @@ class Home extends StatefulWidget {
 class _Home extends State<Home> {
   @override
   Widget build(BuildContext context) {
+    double largeur=MediaQuery.of(context).size.width; //pour ne pas dépasser la largeur de la fenetre par ROW
     return new Scaffold(
       backgroundColor: Colors.white60,
       appBar: new AppBar(
@@ -42,7 +43,7 @@ class _Home extends State<Home> {
         elevation: 50.0,            //l'ambre au dessous de la App Bar
       ),
       body: Center(
-           child: new Column(
+           child: new Row (
              mainAxisAlignment: MainAxisAlignment.end, // ou ils vont se placer
             // crossAxisAlignment: CrossAxisAlignment.center,
              children: <Widget>[
@@ -50,7 +51,7 @@ class _Home extends State<Home> {
                 new Image.asset('images/book1.png'),
                 new Container(
                   height: 20,
-                  width: 20,
+                  width: largeur / 4,
                   color: Colors.indigo,
     )
     ],
