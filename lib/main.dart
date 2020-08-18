@@ -33,11 +33,12 @@ class _Home extends State<Home> {
       appBar: new AppBar(
         title: new Text('Mon Application'),
         leading: new Icon(Icons.arrow_back_ios), // ce qui sera avant le titre à gauche
-        actions: [
-          new Icon(Icons.account_circle) // ce qui sera après le titre
+        actions: <Widget>[                            // ce qui sera après le titre
+          new Icon(Icons.account_circle)   // Icon ou IconButton(icon:Icon(Icons. ...)
         ],
         centerTitle: true,
-        elevation: 50.0, //l'ambre au dessous de la App Bar
+        titleSpacing: 50, // la distance du titre
+        elevation: 50.0,            //l'ambre au dessous de la App Bar
       ),
     );
   }
