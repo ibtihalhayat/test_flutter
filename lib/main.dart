@@ -43,9 +43,19 @@ class _Home extends State<Home> {
       body: Center(
         child :Container(
         decoration: BoxDecoration(color: Colors.amber,border: Border.all(width: 10),borderRadius: BorderRadius.circular(25)),
-        height: MediaQuery.of(context).size.height/2, // selon la taille de l'écran
-        width: MediaQuery.of(context).size.width/2,
-        margin: EdgeInsets.all(40), // à tous les cotés ou EdgeInsets.only(...)
+        height: MediaQuery.of(context).size.height/1.5, // selon la taille de l'écran
+        width: MediaQuery.of(context).size.width/0.75,
+        margin: EdgeInsets.all(10), // à tous les cotés ou EdgeInsets.only(...)
+        child: new Center(
+          child: new Text(
+            'saluut je m\'appele ibtihal , j\'ai 22 ans et je suis étudiante en 4 ème année à l\'Ecole Natioonale des Sciences Appliquées de Khouribga',
+            maxLines: 2,
+            style: new TextStyle(
+              fontSize: 25,
+              fontStyle: FontStyle.italic
+            ),
+          ),
+        ),
       ),
       )
     );
