@@ -40,12 +40,14 @@ class _Home extends State<Home> {
         titleSpacing: 50, // la distance du titre
         elevation: 50.0,            //l'ambre au dessous de la App Bar
       ),
-      body: new Container(
-        color: Colors.amber,
+      body: Center(
+        child :Container(
+        decoration: BoxDecoration(color: Colors.amber,border: Border.all(width: 10),borderRadius: BorderRadius.circular(25)),
         height: MediaQuery.of(context).size.height/2, // selon la taille de l'écran
         width: MediaQuery.of(context).size.width/2,
         margin: EdgeInsets.all(40), // à tous les cotés ou EdgeInsets.only(...)
       ),
+      )
     );
   }
 }
